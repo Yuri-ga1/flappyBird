@@ -1,6 +1,7 @@
 extends Node
 
 @export var pipe_scene: PackedScene
+@export var character_scene: PackedScene
 
 var game_running: bool
 var game_over: bool
@@ -13,10 +14,16 @@ var pipes: Array
 const PIPE_DELAY: int = 100
 const PIPE_RANGE: int = 200
 
+var character: Node2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_window().size
 	ground_height = $Ground.get_node("Sprite2D").texture.get_height()
+
+	character = character_scene.instantiate()
+	add_child(character)
+	
 	new_game()
 	
 func new_game():
@@ -29,18 +36,18 @@ func new_game():
 	$ScoreLabel.text = "SCORE: " + str(score)
 	pipes.clear()
 	generate_pipes()
-	$Bird.reset()
+	character.reset()
 	
 func start_game():
 	game_running = true
-	$Bird.flying = true
-	$Bird.flap()
+	character.flying = true
+	character.flap()
 	$PipeTimer.start()
 
 func stop_game():
 	$PipeTimer.stop()
 	$GameOver.show()
-	$Bird.flying = false
+	character.flying = false
 	game_running = false
 	game_over = true
 
@@ -51,8 +58,8 @@ func _input(event):
 				if game_running == false:
 					start_game()
 				else:
-					if $Bird.flying:
-						$Bird.flap()
+					if character.flying:
+						character.flap()
 						check_top()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -83,16 +90,16 @@ func scored():
 	$ScoreLabel.text = "SCORE: " + str(score)
 
 func check_top():
-	if $Bird.position.y < 0:
-		$Bird.falling = true
+	if character.position.y < 0:
+		character.falling = true
 		stop_game()
 
 func bird_hit():
-	$Bird.falling = true
+	character.falling = true
 	stop_game()
 
 func _on_ground_hit():
-	$Bird.falling = false
+	character.falling = false
 	stop_game()
 
 func _on_game_over_restart():

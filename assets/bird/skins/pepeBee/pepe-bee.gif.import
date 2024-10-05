@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://dmyqitfjceji8"
+path="res://.godot/imported/pepe-bee.gif-31e99e940cf44e50463ed8a39f93c15a.tres"
+
+[deps]
+
+source_file="res://assets/bird/skins/pepeBee/pepe-bee.gif"
+dest_files=["res://.godot/imported/pepe-bee.gif-31e99e940cf44e50463ed8a39f93c15a.tres"]
+
+[params]
+
+frames_per_second=30

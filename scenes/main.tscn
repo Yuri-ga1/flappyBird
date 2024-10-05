@@ -3,19 +3,18 @@
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_gojnq"]
 [ext_resource type="Texture2D" uid="uid://daimfkwbqh4rs" path="res://assets/background/background_day.png" id="1_jnohh"]
 [ext_resource type="PackedScene" uid="uid://c8x7bfew3us4d" path="res://scenes/pipe.tscn" id="2_21oi4"]
-[ext_resource type="PackedScene" uid="uid://dqgux7xesqyav" path="res://scenes/bird.tscn" id="2_ncl6f"]
 [ext_resource type="PackedScene" uid="uid://yp5rjqw64vqy" path="res://scenes/ground.tscn" id="4_lvf32"]
+[ext_resource type="PackedScene" uid="uid://clmuf5gww5bjo" path="res://scenes/birds/skins/pepeBee/pepe_bee.tscn" id="6_8pgy5"]
 [ext_resource type="PackedScene" uid="uid://b5m8o0hfk7u5k" path="res://scenes/game_over.tscn" id="6_chqdn"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_gojnq")
 pipe_scene = ExtResource("2_21oi4")
+character_scene = ExtResource("6_8pgy5")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_jnohh")
 offset = Vector2(432, 384)
-
-[node name="Bird" parent="." instance=ExtResource("2_ncl6f")]
 
 [node name="Ground" parent="." instance=ExtResource("4_lvf32")]
 z_index = 1
