@@ -80,10 +80,15 @@ func generate_pipes():
 	var pipe = pipe_scene.instantiate()
 	pipe.position.x = screen_size.x + PIPE_DELAY
 	pipe.position.y = (screen_size.y - ground_height) / 2  + randi_range(-PIPE_RANGE, PIPE_RANGE)
+	pipe.setup_effect()
 	pipe.hit.connect(bird_hit)
 	pipe.scored.connect(scored)
+	pipe.gravity_reversed.connect(reverse_gravity)
 	add_child(pipe)
 	pipes.append(pipe)
+
+func reverse_gravity():
+	character.gravity_scale *= -1
 
 func scored():
 	score += 1

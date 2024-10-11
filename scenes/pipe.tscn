@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8x7bfew3us4d"]
+[gd_scene load_steps=7 format=3 uid="uid://c8x7bfew3us4d"]
 
 [ext_resource type="Script" path="res://scripts/objects/pipe.gd" id="1_iqjit"]
 [ext_resource type="Texture2D" uid="uid://di845wt0lf80h" path="res://assets/other/pipeHoney.png" id="2_kh1xf"]
+[ext_resource type="Texture2D" uid="uid://bh22rialprdu6" path="res://assets/other/upside_down_gravitation.PNG" id="2_lemam"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1v0s"]
 size = Vector2(78, 559)
@@ -10,14 +11,15 @@ size = Vector2(78, 559)
 size = Vector2(78, 560)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvs27"]
-size = Vector2(6, 200)
+size = Vector2(66, 200)
 
 [node name="Pipe" type="Area2D" groups=["pipes"]]
 script = ExtResource("1_iqjit")
+change_gravity_texture = ExtResource("2_lemam")
 
 [node name="Upper" type="Sprite2D" parent="."]
-position = Vector2(0.500002, -140.435)
-scale = Vector2(0.254839, 0.627803)
+position = Vector2(0.500002, -134.879)
+scale = Vector2(0.254839, 0.634529)
 texture = ExtResource("2_kh1xf")
 offset = Vector2(0, -380)
 flip_v = true
@@ -27,8 +29,8 @@ position = Vector2(0, -379.5)
 shape = SubResource("RectangleShape2D_o1v0s")
 
 [node name="Lower" type="Sprite2D" parent="."]
-position = Vector2(1.5, 140.583)
-scale = Vector2(0.254839, 0.630045)
+position = Vector2(1.5, 135.027)
+scale = Vector2(0.254839, 0.636772)
 texture = ExtResource("2_kh1xf")
 offset = Vector2(0, 380)
 
@@ -38,8 +40,8 @@ shape = SubResource("RectangleShape2D_jt6i7")
 
 [node name="ScoreArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreArea"]
-position = Vector2(42, 0)
+[node name="ScoreAreaCollision" type="CollisionShape2D" parent="ScoreArea"]
+position = Vector2(72, 0)
 shape = SubResource("RectangleShape2D_dvs27")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
