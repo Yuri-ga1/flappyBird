@@ -13,6 +13,8 @@ pipe_scene = ExtResource("2_21oi4")
 character_scene = ExtResource("6_8pgy5")
 
 [node name="Background" type="Sprite2D" parent="."]
+position = Vector2(1.19209e-07, 0)
+scale = Vector2(1, 1.0013)
 texture = ExtResource("1_jnohh")
 offset = Vector2(432, 384)
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c8x7bfew3us4d"]
 
 [ext_resource type="Script" path="res://scripts/objects/pipe.gd" id="1_iqjit"]
-[ext_resource type="Texture2D" uid="uid://buu0u7eflwd06" path="res://assets/other/pipe.png" id="2_qo8mg"]
+[ext_resource type="Texture2D" uid="uid://di845wt0lf80h" path="res://assets/other/pipeHoney.png" id="2_kh1xf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1v0s"]
 size = Vector2(78, 559)
@@ -16,7 +16,9 @@ size = Vector2(6, 200)
 script = ExtResource("1_iqjit")
 
 [node name="Upper" type="Sprite2D" parent="."]
-texture = ExtResource("2_qo8mg")
+position = Vector2(0.500002, -140.435)
+scale = Vector2(0.254839, 0.627803)
+texture = ExtResource("2_kh1xf")
 offset = Vector2(0, -380)
 flip_v = true
 
@@ -25,7 +27,9 @@ position = Vector2(0, -379.5)
 shape = SubResource("RectangleShape2D_o1v0s")
 
 [node name="Lower" type="Sprite2D" parent="."]
-texture = ExtResource("2_qo8mg")
+position = Vector2(1.5, 140.583)
+scale = Vector2(0.254839, 0.630045)
+texture = ExtResource("2_kh1xf")
 offset = Vector2(0, 380)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
