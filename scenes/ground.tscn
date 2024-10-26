@@ -7,7 +7,7 @@
 size = Vector2(1728, 165)
 
 [node name="Ground" type="Area2D"]
-position = Vector2(0, 852)
+position = Vector2(-864, 0)
 script = ExtResource("1_4vgts")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

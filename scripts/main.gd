@@ -7,12 +7,14 @@ var game_running: bool
 var game_over: bool
 var scroll
 var score: int
-const SCROLL_SPEED: int = 4
+var scroll_speed: int = 4
 var screen_size: Vector2i
 var ground_height: int
 var pipes: Array
 const PIPE_DELAY: int = 100
 const PIPE_RANGE: int = 200
+
+var is_mirrored: bool = false
 
 var character: Node2D
 
@@ -28,13 +30,14 @@ func _ready() -> void:
 	
 func new_game():
 	$GameOver.hide()
-	get_tree().call_group('pipes', 'queue_free')
+	cleare_pipes()
 	game_running = false
 	game_over = false
 	score = 0
 	scroll = 0
 	$ScoreLabel.text = "SCORE: " + str(score)
-	pipes.clear()
+	if is_mirrored:
+		mirror_world()
 	generate_pipes()
 	character.reset()
 	
@@ -65,12 +68,16 @@ func _input(event):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if game_running:
-		scroll += SCROLL_SPEED
+		scroll += scroll_speed
 		if scroll >= screen_size.x:
 			scroll = 0
+		if scroll <= 0 and is_mirrored:
+			scroll = screen_size.x
+		
 		$Ground.position.x = -scroll
+		
 		for pipe in pipes:
-			pipe.position.x -= SCROLL_SPEED
+			pipe.position.x -= scroll_speed
 
 
 func _on_pipe_timer_timeout() -> void:
@@ -78,17 +85,28 @@ func _on_pipe_timer_timeout() -> void:
 
 func generate_pipes():
 	var pipe = pipe_scene.instantiate()
-	pipe.position.x = screen_size.x + PIPE_DELAY
-	pipe.position.y = (screen_size.y - ground_height) / 2  + randi_range(-PIPE_RANGE, PIPE_RANGE)
-	pipe.setup_effect()
+	var x_position = screen_size.x + PIPE_DELAY if not is_mirrored else -PIPE_DELAY
+	var y_position = (screen_size.y - ground_height) / 2 + randi_range(-PIPE_RANGE, PIPE_RANGE)
+	
+	pipe.initialize_pipe(x_position, y_position, is_mirrored)
+	
 	pipe.hit.connect(bird_hit)
 	pipe.scored.connect(scored)
-	pipe.gravity_reversed.connect(reverse_gravity)
+	pipe.mirror_world.connect(mirror_world)
+	
 	add_child(pipe)
 	pipes.append(pipe)
 
-func reverse_gravity():
-	character.gravity_scale *= -1
+func mirror_world():
+	is_mirrored = not is_mirrored
+	scroll_speed *= -1
+	
+	cleare_pipes()
+	
+	character.position.x = screen_size.x - 100 if is_mirrored else 100
+	#character.scale.x *= -1
+	
+	$Ground.position.x = screen_size.x
 
 func scored():
 	score += 1
@@ -109,3 +127,7 @@ func _on_ground_hit():
 
 func _on_game_over_restart():
 	new_game()
+	
+func cleare_pipes():
+	get_tree().call_group('pipes', 'queue_free')
+	pipes.clear()

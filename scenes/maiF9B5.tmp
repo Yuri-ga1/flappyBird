@@ -3,14 +3,14 @@
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_gojnq"]
 [ext_resource type="Texture2D" uid="uid://daimfkwbqh4rs" path="res://assets/background/background_day.png" id="1_jnohh"]
 [ext_resource type="PackedScene" uid="uid://c8x7bfew3us4d" path="res://scenes/pipe.tscn" id="2_21oi4"]
+[ext_resource type="PackedScene" uid="uid://dqgux7xesqyav" path="res://scenes/birds/bird.tscn" id="3_frlec"]
 [ext_resource type="PackedScene" uid="uid://yp5rjqw64vqy" path="res://scenes/ground.tscn" id="4_lvf32"]
-[ext_resource type="PackedScene" uid="uid://clmuf5gww5bjo" path="res://scenes/birds/skins/pepeBee/pepe_bee.tscn" id="6_8pgy5"]
 [ext_resource type="PackedScene" uid="uid://b5m8o0hfk7u5k" path="res://scenes/game_over.tscn" id="6_chqdn"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_gojnq")
 pipe_scene = ExtResource("2_21oi4")
-character_scene = ExtResource("6_8pgy5")
+character_scene = ExtResource("3_frlec")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -99

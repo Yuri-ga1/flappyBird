@@ -1,16 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://clmuf5gww5bjo"]
+[gd_scene load_steps=3 format=3 uid="uid://clmuf5gww5bjo"]
 
 [ext_resource type="Script" path="res://scripts/bird/bird.gd" id="1_73i3m"]
 [ext_resource type="SpriteFrames" uid="uid://dmyqitfjceji8" path="res://assets/bird/skins/pepeBee/pepe-bee.gif" id="1_a8tj3"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2hnxv"]
-radius = 11.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dxh1k"]
-radius = 10.7942
-
 [node name="PepeBee" type="CharacterBody2D"]
-rotation = 0.261799
 scale = Vector2(1.2, 1.2)
 script = ExtResource("1_73i3m")
 
@@ -20,16 +13,5 @@ scale = Vector2(0.09, 0.09)
 sprite_frames = ExtResource("1_a8tj3")
 animation = &"gif"
 
-[node name="head" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(13, -3)
-shape = SubResource("CircleShape2D_2hnxv")
-
-[node name="body" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-5, 4)
-rotation = 1.0472
-shape = SubResource("CapsuleShape2D_dxh1k")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="Collision" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-14, -3, -14, -3, -18, 0, -20, 5, -19, 9, -21, 11, -17, 12, -13, 16, -8, 17, -3, 16, 4, 12, 8, 7, 11, 8, 16, 7, 20, 4, 21, 2, 24, 0, 23, -4, 24, -7, 17, -14, 13, -13, 6, -12, 1, -10, -9, -8)
