@@ -50,6 +50,7 @@ func start_game():
 func stop_game():
 	$PipeTimer.stop()
 	$GameOver.show()
+	character.death()
 	character.flying = false
 	game_running = false
 	game_over = true
