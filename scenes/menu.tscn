@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://dplbv72nrinx3"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_4vdd8"]
+[ext_resource type="Texture2D" uid="uid://daimfkwbqh4rs" path="res://assets/background/background_day.png" id="2_vf8nl"]
+[ext_resource type="PackedScene" uid="uid://clmuf5gww5bjo" path="res://scenes/birds/skins/pepeBee/pepe_bee.tscn" id="2_xtqt1"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4vdd8")
+character_scene = ExtResource("2_xtqt1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 99
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -50.5
+offset_right = 35.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(432, 467.5)
+scale = Vector2(1, 1.21745)
+texture = ExtResource("2_vf8nl")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
