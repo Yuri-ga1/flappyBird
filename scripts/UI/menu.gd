@@ -2,6 +2,7 @@ extends Control
 
 
 @export var character_scene: PackedScene
+@export var settings_menu_scene: PackedScene
 
 @export var min_height: float = 500.0  # Минимальная высота
 @export var max_height: float = 500.0  # Максимальная высота
@@ -9,6 +10,7 @@ extends Control
 
 var character: Node2D
 var is_touch_max_height: bool = false
+var settings_menu: Control = null
 
 func _on_ready() -> void:
 	character = character_scene.instantiate()
@@ -30,8 +32,21 @@ func _on_play_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	pass # Replace with function body.
+	if not settings_menu:
+		settings_menu = settings_menu_scene.instantiate()  # Создаём экземпляр SettingsMenu
+		add_child(settings_menu)  # Добавляем в текущую сцену
+		settings_menu.back_pressed.connect(on_settings_back)
+	
+	# Скрываем BaseButtons и делаем SettingsMenu видимым
+	$BaseButtons.visible = false
+	settings_menu.visible = true
 
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+
+func on_settings_back() -> void:
+	if settings_menu:
+		settings_menu.visible = false
+	$BaseButtons.visible = true
