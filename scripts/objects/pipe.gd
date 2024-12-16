@@ -13,13 +13,10 @@ var world_mirrored: bool = false
 @export var change_gravity_texture: Texture
 @export var mirror_world_texture: Texture
 
-func initialize_pipe(x_position: float, y_position: float, mirrored: bool) -> void:
+func initialize_pipe(x_position: float, y_position: float) -> void:
 	position.x = x_position
 	position.y = y_position
 	setup_effect()
-	
-	if mirrored:
-		scale.x = -1
 	
 
 func setup_effect():
@@ -48,13 +45,16 @@ func _on_body_entered(body: Node2D) -> void:
 	hit.emit()
 
 func _on_score_area_body_entered(body: Node2D) -> void:
-	scored.emit()
-
-	if gravity_spawn_reversal and body.has_method("reverse_gravity"):
-		body.reverse_gravity()
+	if !$ScoreArea/ScoreAreaCollision.disabled:
+		scored.emit()
 		
-	if world_mirrored:
-		mirror_world.emit()
+		if gravity_spawn_reversal and body.has_method("reverse_gravity"):
+			body.reverse_gravity()
+		
+		if world_mirrored:
+			mirror_world.emit()
+		
+		$ScoreArea/ScoreAreaCollision.disabled = true
 	
 	
 func setup_score_area_sprite(texture: Texture):

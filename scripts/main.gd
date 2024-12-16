@@ -17,14 +17,20 @@ const PIPE_RANGE: int = 200
 var is_mirrored: bool = false
 
 var character: Node2D
+var camera: Node2D
+var score_label: Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_window().size
-	ground_height = $Ground.get_node("Sprite2D").texture.get_height()
-
+	ground_height = $Camera/Ground.get_node("Sprite2D").texture.get_height()
+	
+	camera = $Camera
+	#score_label = $Camera/ScoreLabel
+	score_label = $ScoreLabel
+	
 	character = character_scene.instantiate()
-	add_child(character)
+	camera.add_child(character)
 	
 	new_game()
 	
@@ -35,7 +41,7 @@ func new_game():
 	game_over = false
 	score = 0
 	scroll = 0
-	$ScoreLabel.text = "SCORE: " + str(score)
+	score_label.text = "SCORE: " + str(score)
 	if is_mirrored:
 		mirror_world()
 	generate_pipes()
@@ -75,7 +81,7 @@ func _process(delta: float) -> void:
 		if scroll <= 0 and is_mirrored:
 			scroll = screen_size.x
 		
-		$Ground.position.x = -scroll
+		$Camera/Ground.position.x = -scroll
 		
 		for pipe in pipes:
 			pipe.position.x -= scroll_speed
@@ -86,32 +92,28 @@ func _on_pipe_timer_timeout() -> void:
 
 func generate_pipes():
 	var pipe = pipe_scene.instantiate()
-	var x_position = screen_size.x + PIPE_DELAY if not is_mirrored else -PIPE_DELAY
+	var x_position = screen_size.x + PIPE_DELAY
 	var y_position = (screen_size.y - ground_height) / 2 + randi_range(-PIPE_RANGE, PIPE_RANGE)
 	
-	pipe.initialize_pipe(x_position, y_position, is_mirrored)
+	pipe.initialize_pipe(x_position, y_position)
 	
 	pipe.hit.connect(bird_hit)
-	pipe.scored.connect(scored)
+	pipe.scored.connect(_update_score)
 	pipe.mirror_world.connect(mirror_world)
 	
-	add_child(pipe)
+	camera.add_child(pipe)
 	pipes.append(pipe)
 
 func mirror_world():
 	is_mirrored = not is_mirrored
-	scroll_speed *= -1
+	camera.scale.x *= -1
+	camera.offset.x *= -1
+	score_label.offset_left = (camera.offset.x * 2 + 21.5) if is_mirrored else (camera.offset.x - 410.5)
 	
-	cleare_pipes()
-	
-	character.position.x = screen_size.x - 100 if is_mirrored else 100
-	#character.scale.x *= -1
-	
-	$Ground.position.x = screen_size.x
 
-func scored():
+func _update_score():
 	score += 1
-	$ScoreLabel.text = "SCORE: " + str(score)
+	score_label.text = "SCORE: " + str(score)
 
 func check_top():
 	if character.position.y < 0:

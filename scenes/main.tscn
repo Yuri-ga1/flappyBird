@@ -12,35 +12,38 @@ script = ExtResource("1_gojnq")
 pipe_scene = ExtResource("2_21oi4")
 character_scene = ExtResource("6_8pgy5")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(0, 84)
+offset = Vector2(432, 384)
+
+[node name="Background" type="Sprite2D" parent="Camera"]
+visible = false
 z_index = -99
-position = Vector2(1.19209e-07, 0)
+position = Vector2(0, -84)
 scale = Vector2(1, 1.0013)
 texture = ExtResource("1_jnohh")
 offset = Vector2(432, 384)
 
-[node name="Ground" parent="." instance=ExtResource("4_lvf32")]
+[node name="Ground" parent="Camera" instance=ExtResource("4_lvf32")]
 z_index = 1
-position = Vector2(0, 852)
+position = Vector2(0, 768)
 
 [node name="PipeTimer" type="Timer" parent="."]
 wait_time = 1.5
 
-[node name="ScoreLabel" type="Label" parent="."]
-z_index = 99
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -34.5
-offset_right = 34.5
-offset_bottom = 23.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 40
-text = "SCORE: 0"
-
 [node name="GameOver" parent="." instance=ExtResource("6_chqdn")]
 visible = false
 
-[connection signal="hit" from="Ground" to="." method="_on_ground_hit"]
+[node name="ScoreLabel" type="Label" parent="."]
+z_index = 99
+offset_left = 22.0
+offset_top = 15.0
+offset_right = 193.0
+offset_bottom = 70.0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 40
+text = "SCORE: 0"
+
+[connection signal="hit" from="Camera/Ground" to="." method="_on_ground_hit"]
 [connection signal="timeout" from="PipeTimer" to="." method="_on_pipe_timer_timeout"]
 [connection signal="restart" from="GameOver" to="." method="_on_game_over_restart"]
