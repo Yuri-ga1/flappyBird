@@ -17,7 +17,7 @@ size = Vector2(66, 200)
 [node name="Pipe" type="Area2D" groups=["pipes"]]
 script = ExtResource("1_iqjit")
 CHANCE_CHANGE_GRAVITY = 10
-CHANCE_MIRROR_WORLD = 20
+CHANCE_MIRROR_WORLD = 10
 change_gravity_texture = ExtResource("2_lemam")
 mirror_world_texture = ExtResource("3_5ndo3")
 
