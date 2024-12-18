@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds4pfp6ipp408"]
+
+[ext_resource type="SpriteFrames" uid="uid://bw0poil5fbak8" path="res://assets/bird/skins/Never/Never.gif" id="1_gdyhh"]
+[ext_resource type="Script" path="res://scripts/bird/bird.gd" id="1_rkabp"]
+
+[node name="Never" type="CharacterBody2D"]
+script = ExtResource("1_rkabp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_gdyhh")
+animation = &"gif"
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-10, -20, 7, -20, 12, -17, 15, -14, 18, -11, 18, 1, 24, 1, 27, 4, 27, 14, 24, 17, 3, 17, 3, 19, -12, 19, -22, 13, -27, 5, -27, -5, -18, -13)

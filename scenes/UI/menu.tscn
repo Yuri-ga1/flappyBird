@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dplbv72nrinx3"]
 
 [ext_resource type="Script" path="res://scripts/UI/menu.gd" id="1_ha8t1"]
-[ext_resource type="PackedScene" uid="uid://clmuf5gww5bjo" path="res://scenes/birds/skins/pepeBee/pepe_bee.tscn" id="2_0scal"]
+[ext_resource type="PackedScene" uid="uid://ds4pfp6ipp408" path="res://scenes/birds/skins/Never/never.tscn" id="2_ctptk"]
 [ext_resource type="Texture2D" uid="uid://daimfkwbqh4rs" path="res://assets/background/background_day.png" id="3_in8x5"]
 [ext_resource type="PackedScene" uid="uid://d1wo5w0rpw6ha" path="res://scenes/UI/settings_menu.tscn" id="3_vatfe"]
 
@@ -13,7 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ha8t1")
-character_scene = ExtResource("2_0scal")
+character_scene = ExtResource("2_ctptk")
 settings_menu_scene = ExtResource("3_vatfe")
 
 [node name="BaseButtons" type="MarginContainer" parent="."]

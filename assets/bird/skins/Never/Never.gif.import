@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://bw0poil5fbak8"
+path="res://.godot/imported/Never.gif-9c411bac4831705a60551083d2f1e86e.tres"
+
+[deps]
+
+source_file="res://assets/bird/skins/Never/Never.gif"
+dest_files=["res://.godot/imported/Never.gif-9c411bac4831705a60551083d2f1e86e.tres"]
+
+[params]
+
+frames_per_second=30

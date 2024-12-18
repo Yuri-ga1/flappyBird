@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="flappy bird"
+config/name="Never can fly"
 run/main_scene="res://scenes/UI/menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/game_manager.gd"
 
 [display]
 

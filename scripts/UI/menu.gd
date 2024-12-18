@@ -28,6 +28,9 @@ func _process(delta: float) -> void:
 			is_touch_max_height = true
 
 func _on_play_pressed() -> void:
+	if character and character.get_parent():
+		character.get_parent().remove_child(character)
+		GameManager.character = character
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 

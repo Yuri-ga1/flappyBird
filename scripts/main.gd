@@ -1,7 +1,6 @@
 extends Node
 
 @export var pipe_scene: PackedScene
-@export var character_scene: PackedScene
 
 var game_running: bool
 var game_over: bool
@@ -26,10 +25,10 @@ func _ready() -> void:
 	ground_height = $Camera/Ground.get_node("Sprite2D").texture.get_height()
 	
 	camera = $Camera
-	#score_label = $Camera/ScoreLabel
 	score_label = $ScoreLabel
 	
-	character = character_scene.instantiate()
+	character = GameManager.character
+	
 	camera.add_child(character)
 	
 	new_game()

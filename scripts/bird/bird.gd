@@ -46,7 +46,8 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.stop()
 
 func flap():
-	$Fly.play()
+	if $Fly:
+		$Fly.play()
 	velocity.y = FLAP_SPEED * gravity_scale
 
 func reverse_gravity():
@@ -54,7 +55,8 @@ func reverse_gravity():
 	scale.y *= -1
 	
 func death():
-	$Death.play()
+	if $Death:
+		$Death.play()
 	if gravity_scale < 0:
 		reverse_gravity()
 	set_rotation(PI / 2)
