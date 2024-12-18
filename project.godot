@@ -23,6 +23,7 @@ GameManager="*res://scripts/game_manager.gd"
 
 window/size/viewport_width=864
 window/size/viewport_height=936
+window/size/resizable=false
 
 [dotnet]
 
