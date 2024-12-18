@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/UI/menu.gd" id="1_ha8t1"]
 [ext_resource type="PackedScene" uid="uid://ds4pfp6ipp408" path="res://scenes/birds/skins/Never/never.tscn" id="2_ctptk"]
-[ext_resource type="Texture2D" uid="uid://daimfkwbqh4rs" path="res://assets/background/background_day.png" id="3_in8x5"]
 [ext_resource type="PackedScene" uid="uid://d1wo5w0rpw6ha" path="res://scenes/UI/settings_menu.tscn" id="3_vatfe"]
+[ext_resource type="Texture2D" uid="uid://beyo3la3yesjc" path="res://assets/background/background_Archaea.png" id="4_rimgn"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -49,7 +49,7 @@ text = "Quit"
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(432, 468)
 scale = Vector2(1, 1.21875)
-texture = ExtResource("3_in8x5")
+texture = ExtResource("4_rimgn")
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="BaseButtons/VBoxContainer/Play" to="." method="_on_play_pressed"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://crrhtr6jdiomb"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_gojnq"]
-[ext_resource type="Texture2D" uid="uid://daimfkwbqh4rs" path="res://assets/background/background_day.png" id="1_jnohh"]
 [ext_resource type="PackedScene" uid="uid://c8x7bfew3us4d" path="res://scenes/game objects/pipe.tscn" id="2_21oi4"]
+[ext_resource type="Texture2D" uid="uid://beyo3la3yesjc" path="res://assets/background/background_Archaea.png" id="3_33hfe"]
 [ext_resource type="PackedScene" uid="uid://yp5rjqw64vqy" path="res://scenes/game objects/ground.tscn" id="4_lvf32"]
 [ext_resource type="PackedScene" uid="uid://b5m8o0hfk7u5k" path="res://scenes/UI/game_over.tscn" id="6_chqdn"]
 
@@ -18,7 +18,7 @@ offset = Vector2(432, 384)
 z_index = -99
 position = Vector2(0, -84)
 scale = Vector2(1, 1.0013)
-texture = ExtResource("1_jnohh")
+texture = ExtResource("3_33hfe")
 offset = Vector2(432, 384)
 
 [node name="Ground" parent="Camera" instance=ExtResource("4_lvf32")]
