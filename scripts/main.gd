@@ -1,6 +1,7 @@
 extends Node
 
 @export var pipe_scene: PackedScene
+@export var background_music: Array[AudioStream]
 
 var game_running: bool
 var game_over: bool
@@ -50,11 +51,13 @@ func start_game():
 	game_running = true
 	character.flying = true
 	character.flap()
+	play_background_music()
 	$PipeTimer.start()
 
 func stop_game():
 	$PipeTimer.stop()
 	$GameOver.show()
+	$Background_music.stop()
 	character.death()
 	character.flying = false
 	game_running = false
@@ -133,3 +136,14 @@ func _on_game_over_restart():
 func cleare_pipes():
 	get_tree().call_group('pipes', 'queue_free')
 	pipes.clear()
+
+func play_background_music():
+	if background_music.size() > 0:
+		var music = background_music.pick_random()
+
+		$Background_music.stream = music
+		$Background_music.play()
+		
+		$Background_music.finished.connect(func():
+			$Background_music.play()
+		)

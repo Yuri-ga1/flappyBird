@@ -16,6 +16,11 @@ func _on_ready() -> void:
 	character = character_scene.instantiate()
 	add_child(character)
 	character.flying = true
+	$Background_music.play()
+	$Background_music.finished.connect(func():
+		$Background_music.play()
+	)
+	
 
 func _process(delta: float) -> void:
 	if is_touch_max_height:

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dplbv72nrinx3"]
+[gd_scene load_steps=6 format=3 uid="uid://dplbv72nrinx3"]
 
 [ext_resource type="Script" path="res://scripts/UI/menu.gd" id="1_ha8t1"]
 [ext_resource type="PackedScene" uid="uid://ds4pfp6ipp408" path="res://scenes/birds/skins/Never/never.tscn" id="2_ctptk"]
 [ext_resource type="PackedScene" uid="uid://d1wo5w0rpw6ha" path="res://scenes/UI/settings_menu.tscn" id="3_vatfe"]
 [ext_resource type="Texture2D" uid="uid://beyo3la3yesjc" path="res://assets/background/background_Archaea.png" id="4_rimgn"]
+[ext_resource type="AudioStream" uid="uid://ca8f7q4lnhgvo" path="res://assets/audio/background/background.mp3" id="5_i0dp5"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -50,6 +51,10 @@ text = "Quit"
 position = Vector2(432, 468)
 scale = Vector2(1, 1.21875)
 texture = ExtResource("4_rimgn")
+
+[node name="Background_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_i0dp5")
+bus = &"Music"
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="BaseButtons/VBoxContainer/Play" to="." method="_on_play_pressed"]

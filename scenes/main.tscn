@@ -1,14 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://crrhtr6jdiomb"]
+[gd_scene load_steps=7 format=3 uid="uid://crrhtr6jdiomb"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_gojnq"]
 [ext_resource type="PackedScene" uid="uid://c8x7bfew3us4d" path="res://scenes/game objects/pipe.tscn" id="2_21oi4"]
 [ext_resource type="Texture2D" uid="uid://beyo3la3yesjc" path="res://assets/background/background_Archaea.png" id="3_33hfe"]
 [ext_resource type="PackedScene" uid="uid://yp5rjqw64vqy" path="res://scenes/game objects/ground.tscn" id="4_lvf32"]
+[ext_resource type="AudioStream" uid="uid://ca8f7q4lnhgvo" path="res://assets/audio/background/background.mp3" id="6_a1d13"]
 [ext_resource type="PackedScene" uid="uid://b5m8o0hfk7u5k" path="res://scenes/UI/game_over.tscn" id="6_chqdn"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_gojnq")
 pipe_scene = ExtResource("2_21oi4")
+background_music = Array[AudioStream]([ExtResource("6_a1d13")])
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(0, 84)
@@ -40,6 +42,9 @@ offset_bottom = 70.0
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 40
 text = "SCORE: 0"
+
+[node name="Background_music" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
 
 [connection signal="hit" from="Camera/Ground" to="." method="_on_ground_hit"]
 [connection signal="timeout" from="PipeTimer" to="." method="_on_pipe_timer_timeout"]

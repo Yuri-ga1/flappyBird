@@ -27,5 +27,12 @@ func update_sounds_volume():
 		var volume = AudioServer.get_bus_volume_db(2)
 		
 		for sound in sfx_sounds:
-			print(sound)
 			sound.volume_db = volume
+
+func update_music_volume():
+	var background_music = GameManager.background_music
+	if background_music.size() > 0:
+		var volume = AudioServer.get_bus_volume_db(1)
+		
+		for music in background_music:
+			music.volume_db = volume
