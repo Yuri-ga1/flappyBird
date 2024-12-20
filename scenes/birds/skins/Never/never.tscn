@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://ds4pfp6ipp408"]
+[gd_scene load_steps=7 format=3 uid="uid://ds4pfp6ipp408"]
 
 [ext_resource type="SpriteFrames" uid="uid://bw0poil5fbak8" path="res://assets/bird/skins/Never/Never.gif" id="1_gdyhh"]
 [ext_resource type="Script" path="res://scripts/bird/bird.gd" id="1_rkabp"]
+[ext_resource type="AudioStream" uid="uid://bdkd7yc8r8ktp" path="res://assets/audio/character sounds/death/Never/Never_kar_durak_x2.WAV" id="2_3i0ye"]
+[ext_resource type="AudioStream" uid="uid://c47rvebprhm2b" path="res://assets/audio/character sounds/death/Never/Never_kar_sad.WAV" id="3_cbxft"]
+[ext_resource type="AudioStream" uid="uid://cgf3df1qvhn7l" path="res://assets/audio/character sounds/death/Never/Never_yurodivi.WAV" id="4_10wok"]
+[ext_resource type="AudioStream" uid="uid://blppanvu65r7d" path="res://assets/audio/character sounds/flying/bird_fly.WAV" id="5_ov6ye"]
 
 [node name="Never" type="CharacterBody2D"]
 script = ExtResource("1_rkabp")
+death_sounds = Array[AudioStream]([ExtResource("2_3i0ye"), ExtResource("3_cbxft"), ExtResource("4_10wok")])
+fly_sound = ExtResource("5_ov6ye")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_gdyhh")

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bdkd7yc8r8ktp"
+path="res://.godot/imported/Never_kar_durak_x2.WAV-27a1b4bce888a03d125b058687e217cb.sample"
+
+[deps]
+
+source_file="res://assets/audio/character sounds/death/Never/Never_kar_durak_x2.WAV"
+dest_files=["res://.godot/imported/Never_kar_durak_x2.WAV-27a1b4bce888a03d125b058687e217cb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

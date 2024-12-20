@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c47rvebprhm2b"
+path="res://.godot/imported/Never_kar_sad.WAV-b322aa114fee51c982b80b7a092ff0c4.sample"
+
+[deps]
+
+source_file="res://assets/audio/character sounds/death/Never/Never_kar_sad.WAV"
+dest_files=["res://.godot/imported/Never_kar_sad.WAV-b322aa114fee51c982b80b7a092ff0c4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
