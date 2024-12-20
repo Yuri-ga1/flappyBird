@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/objects/pipe.gd" id="1_iqjit"]
 [ext_resource type="Texture2D" uid="uid://bh22rialprdu6" path="res://assets/other/upside_down_gravitation.PNG" id="2_lemam"]
 [ext_resource type="Texture2D" uid="uid://0udm25rhktc" path="res://assets/other/mirror.png" id="3_5ndo3"]
-[ext_resource type="Texture2D" uid="uid://cnusofk7px73n" path="res://assets/other/corrupted_skint.png" id="4_j5x2m"]
+[ext_resource type="Texture2D" uid="uid://drnyncujte55u" path="res://assets/other/corrupted_skint1.png" id="4_og2a4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvs27"]
 size = Vector2(66, 200)
@@ -16,25 +16,26 @@ change_gravity_texture = ExtResource("2_lemam")
 mirror_world_texture = ExtResource("3_5ndo3")
 
 [node name="Upper" type="Sprite2D" parent="."]
-position = Vector2(2, 229.751)
-scale = Vector2(1, 1.6204)
-texture = ExtResource("4_j5x2m")
+position = Vector2(2, 273.667)
+scale = Vector2(1, 1.73333)
+texture = ExtResource("4_og2a4")
 offset = Vector2(0, -380)
 flip_v = true
 
 [node name="UpperCollision" type="CollisionPolygon2D" parent="."]
 position = Vector2(-3, -2)
 scale = Vector2(1, -1)
-polygon = PackedVector2Array(-9, 98, -39, 229, -31, 424, -43, 397, -56, 398, -66, 423, -85, 537, -97, 537, -95, 565, -105, 576, -108, 608, -108, 628, -92, 658, -68, 673, -35, 662, 13, 660, 67, 649, 117, 593, 117, 565, 97, 567, 111, 528, 115, 395, 104, 395, 70, 438, 64, 278, 6, 98)
+polygon = PackedVector2Array(-9, 98, -39, 229, -30, 417, -55, 416, -85, 537, -108, 608, -107, 659, -97, 671, -31, 670, 82, 670, 118, 624, 117, 593, 111, 528, 113, 409, 71, 456, 64, 278, 6, 98)
 
 [node name="Lower" type="Sprite2D" parent="."]
-position = Vector2(4, -229.751)
-scale = Vector2(1, 1.6204)
-texture = ExtResource("4_j5x2m")
+position = Vector2(0, -275.667)
+scale = Vector2(1, 1.73333)
+texture = ExtResource("4_og2a4")
 offset = Vector2(0, 380)
 
-[node name="LowerCollision" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-11, 100, -39, 229, -31, 424, -43, 397, -56, 398, -66, 423, -85, 537, -97, 537, -95, 565, -105, 576, -108, 608, -108, 628, -92, 658, -68, 673, -35, 662, 13, 660, 67, 649, 117, 593, 117, 565, 97, 567, 111, 528, 115, 395, 104, 395, 70, 438, 64, 278, 4, 100)
+[node name="UpperCollision2" type="CollisionPolygon2D" parent="."]
+position = Vector2(-6, 0)
+polygon = PackedVector2Array(-9, 98, -39, 229, -30, 417, -55, 416, -85, 537, -108, 608, -107, 659, -97, 671, -31, 670, 82, 670, 118, 624, 117, 593, 111, 528, 113, 409, 71, 456, 64, 278, 6, 98)
 
 [node name="ScoreArea" type="Area2D" parent="."]
 
