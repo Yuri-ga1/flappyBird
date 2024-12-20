@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://yp5rjqw64vqy"]
 
 [ext_resource type="Script" path="res://scripts/objects/ground.gd" id="1_4vgts"]
-[ext_resource type="Texture2D" uid="uid://c5u3dpkonmkyk" path="res://assets/background/groundHoney.png" id="2_hnf65"]
+[ext_resource type="Texture2D" uid="uid://dqqvvvl2w063t" path="res://assets/background/ground_Archaea.png" id="2_g112j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64pmg"]
 size = Vector2(1728, 165)
@@ -11,7 +11,7 @@ position = Vector2(-864, 0)
 script = ExtResource("1_4vgts")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_hnf65")
+texture = ExtResource("2_g112j")
 offset = Vector2(864, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
