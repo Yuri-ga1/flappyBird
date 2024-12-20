@@ -3,6 +3,9 @@ extends CharacterBody2D
 @export var death_sounds: Array[AudioStream]
 @export var fly_sound: AudioStream
 
+var death_sound_node: AudioStreamPlayer
+var fly_sound_node: AudioStreamPlayer
+
 const GRAVITY: int = 1000
 const MAX_VEL: int = 600
 const FLAP_SPEED: int = -500
@@ -18,8 +21,9 @@ var sounds: Array[AudioStreamPlayer] = []
 
 # calling when the node enters the scene for the first time
 func _ready() -> void:
+	death_sound_node = $Death
+	fly_sound_node = $Fly
 	reset()
-	add_fly_sound()
 	
 
 func reset():
@@ -49,8 +53,8 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.stop()
 
 func flap():
-	if $Fly_sound:
-		$Fly_sound.play()
+	if $Fly:
+		$Fly.play()
 	velocity.y = FLAP_SPEED * gravity_scale
 
 func reverse_gravity():
@@ -67,52 +71,16 @@ func death():
 		
 	is_alive = false
 
-func add_fly_sound():
-	var player = AudioStreamPlayer.new()
-	var sfx_volume = AudioServer.get_bus_volume_db(2)
-
-	player.stream = fly_sound
-	player.name = "Fly_sound"
-
-	player.volume_db = sfx_volume
-	player.bus = "SFX"
-
-	add_child(player)
-	
-	sounds.append(player)
-	GameManager.sfx_sounds.append(player)
-
 func play_death_sound():
 	if death_sounds.size() > 0:
-		var index = randi_range(0, death_sounds.size()-1)
-		var player = AudioStreamPlayer.new()
-		
-		var sfx_volume = AudioServer.get_bus_volume_db(2)
+		var sfx = death_sounds.pick_random()
 
-		player.stream = death_sounds[index]
-		player.name = 'Death_sound'
-		player.volume_db = sfx_volume
-
-		add_child(player)
-		player.play()
-		
-		sounds.append(player)
-		player.finished.connect(func():
-			player.queue_free()
-		)
-
+		death_sound_node.stream = sfx
+		death_sound_node.play()
 
 func stop_sounds():
-	for player in sounds:
-		if not is_instance_valid(player):
-			sounds.erase(player)
-			GameManager.sfx_sounds.erase(player)
-		elif player.name != "Fly_sound":
-			if player.is_playing:
-				player.stop()
-			
-			player.queue_free()
-			sounds.erase(player)
-			GameManager.sfx_sounds.erase(player)
+	if death_sound_node.playing:
+		death_sound_node.stop()
 	
-	add_fly_sound()
+	if fly_sound_node.playing:
+		fly_sound_node.stop()

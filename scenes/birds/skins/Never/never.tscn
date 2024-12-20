@@ -18,3 +18,10 @@ animation = &"gif"
 
 [node name="Collision" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-10, -20, 7, -20, 12, -17, 15, -14, 18, -11, 18, 1, 24, 1, 27, 4, 27, 14, 24, 17, 3, 17, 3, 19, -12, 19, -22, 13, -27, 5, -27, -5, -18, -13)
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="Fly" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ov6ye")
+bus = &"SFX"
