@@ -78,7 +78,6 @@ func add_fly_sound():
 	player.bus = "SFX"
 
 	add_child(player)
-	player.play()
 	
 	sounds.append(player)
 	GameManager.sfx_sounds.append(player)
@@ -91,7 +90,7 @@ func play_death_sound():
 		var sfx_volume = AudioServer.get_bus_volume_db(2)
 
 		player.stream = death_sounds[index]
-
+		player.name = 'Death_sound'
 		player.volume_db = sfx_volume
 
 		add_child(player)
@@ -107,6 +106,13 @@ func stop_sounds():
 	for player in sounds:
 		if not is_instance_valid(player):
 			sounds.erase(player)
+			GameManager.sfx_sounds.erase(player)
+		elif player.name != "Fly_sound":
+			if player.is_playing:
+				player.stop()
+			
+			player.queue_free()
+			sounds.erase(player)
+			GameManager.sfx_sounds.erase(player)
 	
-	for sound in sounds:
-		sound.stop()
+	add_fly_sound()
