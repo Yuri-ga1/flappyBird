@@ -78,10 +78,9 @@ func _input(event):
 func _process(delta: float) -> void:
 	if game_running:
 		scroll += scroll_speed
-		if scroll >= screen_size.x:
+		
+		if scroll >= screen_size.x or scroll <= 0:
 			scroll = 0
-		if scroll <= 0 and is_mirrored:
-			scroll = screen_size.x
 		
 		$Camera/Ground.position.x = -scroll
 		
