@@ -18,15 +18,22 @@ var is_mirrored: bool = false
 
 var character: Node2D
 var camera: Node2D
+var ground: Node2D
+var background: Node2D
+
 var score_label: Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	screen_size = get_window().size
-	ground_height = $Camera/Ground.get_node("Sprite2D").texture.get_height()
-	
 	camera = $Camera
 	score_label = $ScoreLabel
+	ground = $Camera/Ground
+	background = $Camera/Background
+	
+	background.texture = GameManager.background
+	
+	screen_size = get_window().size
+	ground_height = ground.get_node("Sprite2D").texture.get_height()
 	
 	character = GameManager.character
 	
@@ -82,7 +89,7 @@ func _process(delta: float) -> void:
 		if scroll >= screen_size.x or scroll <= 0:
 			scroll = 0
 		
-		$Camera/Ground.position.x = -scroll
+		ground.position.x = -scroll
 		
 		for pipe in pipes:
 			pipe.position.x -= scroll_speed
@@ -92,7 +99,8 @@ func _on_pipe_timer_timeout() -> void:
 	generate_pipes()
 
 func generate_pipes():
-	var pipe = pipe_scene.instantiate()
+	#var pipe = pipe_scene.instantiate()
+	var pipe = GameManager.pipe_scene.instantiate()
 	var x_position = screen_size.x + PIPE_DELAY
 	var y_position = (screen_size.y - ground_height) / 2 + randi_range(-PIPE_RANGE, PIPE_RANGE)
 	

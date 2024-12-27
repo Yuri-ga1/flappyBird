@@ -9,13 +9,19 @@ extends Control
 
 
 var character: Node2D
+var background: Node2D
+
 var is_touch_max_height: bool = false
 var settings_menu: Control = null
 
 func _on_ready() -> void:
+	background = $Background
+	background.texture = GameManager.background
+	
 	character = character_scene.instantiate()
 	add_child(character)
 	character.flying = true
+	
 	$Background_music.play()
 	$Background_music.finished.connect(func():
 		$Background_music.play()
