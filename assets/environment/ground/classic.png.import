@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5u3dpkonmkyk"
-path="res://.godot/imported/groundHoney.png-db2340ea0136c36915012ae3724905a1.ctex"
+uid="uid://cqr45lnvun2a3"
+path="res://.godot/imported/classic.png-95680dbc7026b6084bc3acf093aa79bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/ground/groundHoney.png"
-dest_files=["res://.godot/imported/groundHoney.png-db2340ea0136c36915012ae3724905a1.ctex"]
+source_file="res://assets/environment/ground/classic.png"
+dest_files=["res://.godot/imported/classic.png-95680dbc7026b6084bc3acf093aa79bd.ctex"]
 
 [params]
 

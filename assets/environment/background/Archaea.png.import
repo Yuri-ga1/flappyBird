@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buu0u7eflwd06"
-path="res://.godot/imported/pipe.png-f763edd139bc76a5d37f7fa303f8377b.ctex"
+uid="uid://beyo3la3yesjc"
+path="res://.godot/imported/Archaea.png-06f73a7ecf89f6f7096e1fdfaa8ef9a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/pipes/pipe.png"
-dest_files=["res://.godot/imported/pipe.png-f763edd139bc76a5d37f7fa303f8377b.ctex"]
+source_file="res://assets/environment/background/Archaea.png"
+dest_files=["res://.godot/imported/Archaea.png-06f73a7ecf89f6f7096e1fdfaa8ef9a8.ctex"]
 
 [params]
 

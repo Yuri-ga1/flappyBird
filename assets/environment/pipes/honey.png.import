@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daimfkwbqh4rs"
-path="res://.godot/imported/background_day.png-e6c2786c17176c031ea3d2dace7faf0f.ctex"
+uid="uid://di845wt0lf80h"
+path="res://.godot/imported/honey.png-e8a776c58536fffbf9977a33f7bc0e3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/background/background_day.png"
-dest_files=["res://.godot/imported/background_day.png-e6c2786c17176c031ea3d2dace7faf0f.ctex"]
+source_file="res://assets/environment/pipes/honey.png"
+dest_files=["res://.godot/imported/honey.png-e8a776c58536fffbf9977a33f7bc0e3d.ctex"]
 
 [params]
 
