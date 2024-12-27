@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ds4pfp6ipp408" path="res://scenes/birds/skins/Never/never.tscn" id="2_ctptk"]
 [ext_resource type="PackedScene" uid="uid://d1wo5w0rpw6ha" path="res://scenes/UI/settings_menu.tscn" id="3_vatfe"]
 [ext_resource type="Texture2D" uid="uid://bthpolsiaq0kw" path="res://assets/UI/play.png" id="4_ckt63"]
-[ext_resource type="Texture2D" uid="uid://beyo3la3yesjc" path="res://assets/background/background_Archaea.png" id="4_rimgn"]
+[ext_resource type="Texture2D" uid="uid://beyo3la3yesjc" path="res://assets/environment/background/background_Archaea.png" id="4_rimgn"]
 [ext_resource type="AudioStream" uid="uid://ca8f7q4lnhgvo" path="res://assets/audio/background/background.mp3" id="5_i0dp5"]
 [ext_resource type="Texture2D" uid="uid://d1k8t4l66ejjx" path="res://assets/UI/settings.png" id="5_olog4"]
 [ext_resource type="Texture2D" uid="uid://cgcps2hkego0p" path="res://assets/UI/Quit.png" id="6_0qpqu"]

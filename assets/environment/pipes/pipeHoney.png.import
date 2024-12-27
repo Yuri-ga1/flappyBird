@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crpon06yydjx5"
-path="res://.godot/imported/corrupted_skint.png-c7c9485ff1c3d3f8e9bb4f4fc7f06505.ctex"
+uid="uid://di845wt0lf80h"
+path="res://.godot/imported/pipeHoney.png-3867b5625b6caec579dcc05cee31449a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/other/corrupted_skint.png"
-dest_files=["res://.godot/imported/corrupted_skint.png-c7c9485ff1c3d3f8e9bb4f4fc7f06505.ctex"]
+source_file="res://assets/environment/pipes/pipeHoney.png"
+dest_files=["res://.godot/imported/pipeHoney.png-3867b5625b6caec579dcc05cee31449a.ctex"]
 
 [params]
 

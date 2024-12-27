@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqr45lnvun2a3"
-path="res://.godot/imported/ground.png-3c5b272401200854dec4f21c83647076.ctex"
+uid="uid://beyo3la3yesjc"
+path="res://.godot/imported/background_Archaea.png-76aaa1c7344672cfb74746677e70b062.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background/ground.png"
-dest_files=["res://.godot/imported/ground.png-3c5b272401200854dec4f21c83647076.ctex"]
+source_file="res://assets/environment/background/background_Archaea.png"
+dest_files=["res://.godot/imported/background_Archaea.png-76aaa1c7344672cfb74746677e70b062.ctex"]
 
 [params]
 

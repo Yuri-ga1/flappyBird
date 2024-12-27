@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://crrhtr6jdiomb"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_gojnq"]
-[ext_resource type="PackedScene" uid="uid://c8x7bfew3us4d" path="res://scenes/game objects/pipe.tscn" id="2_21oi4"]
-[ext_resource type="Texture2D" uid="uid://beyo3la3yesjc" path="res://assets/background/background_Archaea.png" id="3_33hfe"]
-[ext_resource type="PackedScene" uid="uid://yp5rjqw64vqy" path="res://scenes/game objects/ground.tscn" id="4_lvf32"]
+[ext_resource type="PackedScene" uid="uid://c8x7bfew3us4d" path="res://scenes/game_objects/pipe.tscn" id="2_21oi4"]
+[ext_resource type="Texture2D" uid="uid://beyo3la3yesjc" path="res://assets/environment/background/background_Archaea.png" id="3_33hfe"]
+[ext_resource type="PackedScene" uid="uid://yp5rjqw64vqy" path="res://scenes/game_objects/ground.tscn" id="4_lvf32"]
 [ext_resource type="AudioStream" uid="uid://ca8f7q4lnhgvo" path="res://assets/audio/background/background.mp3" id="6_a1d13"]
 [ext_resource type="PackedScene" uid="uid://b5m8o0hfk7u5k" path="res://scenes/UI/game_over.tscn" id="6_chqdn"]
 

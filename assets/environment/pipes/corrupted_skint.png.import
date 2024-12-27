@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daimfkwbqh4rs"
-path="res://.godot/imported/background_day.png-71567fab7ea3e88ba0b8c8fc49917d36.ctex"
+uid="uid://crpon06yydjx5"
+path="res://.godot/imported/corrupted_skint.png-47dd0e404a67ca5243b23d40cf1a7ae0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background/background_day.png"
-dest_files=["res://.godot/imported/background_day.png-71567fab7ea3e88ba0b8c8fc49917d36.ctex"]
+source_file="res://assets/environment/pipes/corrupted_skint.png"
+dest_files=["res://.godot/imported/corrupted_skint.png-47dd0e404a67ca5243b23d40cf1a7ae0.ctex"]
 
 [params]
 
