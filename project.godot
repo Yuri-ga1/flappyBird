@@ -29,6 +29,10 @@ window/size/resizable=false
 
 project/assembly_name="flappy bird"
 
+[gui]
+
+theme/custom_font="res://assets/fonts/Monocraft.otf"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

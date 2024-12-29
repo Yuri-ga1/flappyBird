@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1aiqjg3ww8w6"]
+
+[ext_resource type="Script" path="res://scripts/UI/button.gd" id="1_blphu"]
+[ext_resource type="Texture2D" uid="uid://ov453pjlx53n" path="res://assets/UI/button_empty.png" id="2_fdln7"]
+
+[node name="Button" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+flat = true
+script = ExtResource("1_blphu")
+
+[node name="Texture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 42.0
+texture = ExtResource("2_fdln7")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="Texture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.741176, 0.305882, 0.0823529, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 26
+text = "Settings
+"
+horizontal_alignment = 1
+vertical_alignment = 1
