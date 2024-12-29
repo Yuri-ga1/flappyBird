@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5m8o0hfk7u5k"]
+[gd_scene load_steps=4 format=3 uid="uid://b5m8o0hfk7u5k"]
 
 [ext_resource type="Script" path="res://scripts/UI/game_over.gd" id="1_gacox"]
 [ext_resource type="PackedScene" uid="uid://d1wo5w0rpw6ha" path="res://scenes/UI/settings_menu.tscn" id="2_oamy5"]
-[ext_resource type="Texture2D" uid="uid://gkjehrvp36q5" path="res://assets/UI/restart.png" id="2_xwuhf"]
-[ext_resource type="Texture2D" uid="uid://d1k8t4l66ejjx" path="res://assets/UI/settings.png" id="3_dyjnv"]
-[ext_resource type="Texture2D" uid="uid://cgcps2hkego0p" path="res://assets/UI/Quit.png" id="3_h05k1"]
+[ext_resource type="PackedScene" uid="uid://c1aiqjg3ww8w6" path="res://scenes/UI/button.tscn" id="6_kgy1f"]
 
 [node name="GameOver" type="CanvasLayer"]
 script = ExtResource("1_gacox")
@@ -24,24 +22,23 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BaseButtons"]
+layout_direction = 3
 layout_mode = 2
+size_flags_vertical = 4
 alignment = 1
 
-[node name="RestartButton" type="Button" parent="BaseButtons/VBoxContainer"]
+[node name="Restart" parent="BaseButtons/VBoxContainer" instance=ExtResource("6_kgy1f")]
 layout_mode = 2
-icon = ExtResource("2_xwuhf")
-flat = true
+button_text = "Restart"
 
-[node name="SettingsButton" type="Button" parent="BaseButtons/VBoxContainer"]
+[node name="Settings" parent="BaseButtons/VBoxContainer" instance=ExtResource("6_kgy1f")]
 layout_mode = 2
-icon = ExtResource("3_dyjnv")
-flat = true
+button_text = "Settings"
 
-[node name="QuitButton" type="Button" parent="BaseButtons/VBoxContainer"]
+[node name="Quit" parent="BaseButtons/VBoxContainer" instance=ExtResource("6_kgy1f")]
 layout_mode = 2
-icon = ExtResource("3_h05k1")
-flat = true
+button_text = "Quit"
 
-[connection signal="pressed" from="BaseButtons/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="BaseButtons/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="BaseButtons/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="BaseButtons/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="BaseButtons/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="BaseButtons/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

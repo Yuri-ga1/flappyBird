@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1wo5w0rpw6ha"]
+[gd_scene load_steps=3 format=3 uid="uid://d1wo5w0rpw6ha"]
 
 [ext_resource type="Script" path="res://scripts/UI/settings_menu.gd" id="1_m5380"]
-[ext_resource type="Texture2D" uid="uid://231wa7b8leql" path="res://assets/UI/back.png" id="2_abfl4"]
-[ext_resource type="Texture2D" uid="uid://d4b3kl60qlvui" path="res://assets/UI/apply.png" id="3_5l24d"]
+[ext_resource type="PackedScene" uid="uid://c1aiqjg3ww8w6" path="res://scenes/UI/button.tscn" id="4_kxvvo"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -41,6 +40,7 @@ alignment = 1
 [node name="MasterLabel" type="Label" parent="Audio/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_font_sizes/font_size = 20
 text = "Master"
 
 [node name="Master" type="HSlider" parent="Audio/VBoxContainer"]
@@ -52,6 +52,7 @@ step = 0.01
 [node name="MusicLabel" type="Label" parent="Audio/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_font_sizes/font_size = 20
 text = "Music"
 
 [node name="Music" type="HSlider" parent="Audio/VBoxContainer"]
@@ -63,6 +64,7 @@ step = 0.01
 [node name="SFXLabel" type="Label" parent="Audio/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_font_sizes/font_size = 20
 text = "SFX"
 
 [node name="SFX" type="HSlider" parent="Audio/VBoxContainer"]
@@ -77,16 +79,14 @@ size_flags_horizontal = 5
 size_flags_vertical = 8
 theme_override_constants/separation = 151
 
-[node name="Back" type="Button" parent="Audio/VBoxContainer/buttons"]
+[node name="Back" parent="Audio/VBoxContainer/buttons" instance=ExtResource("4_kxvvo")]
 layout_mode = 2
-icon = ExtResource("2_abfl4")
-flat = true
+button_text = "Back"
 
-[node name="Apply" type="Button" parent="Audio/VBoxContainer/buttons"]
+[node name="Apply" parent="Audio/VBoxContainer/buttons" instance=ExtResource("4_kxvvo")]
 layout_mode = 2
-icon = ExtResource("3_5l24d")
-flat = true
+button_text = "Apply"
 
 [connection signal="pressed" from="Audio/VBoxContainer/buttons/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="Audio/VBoxContainer/buttons/Apply" to="." method="_on_apply_pressed"]
 [connection signal="pressed" from="Audio/VBoxContainer/buttons/Apply" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Audio/VBoxContainer/buttons/Apply" to="." method="_on_apply_pressed"]
