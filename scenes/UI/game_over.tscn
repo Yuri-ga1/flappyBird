@@ -31,6 +31,10 @@ alignment = 1
 layout_mode = 2
 button_text = "Restart"
 
+[node name="Store" parent="BaseButtons/VBoxContainer" instance=ExtResource("6_kgy1f")]
+layout_mode = 2
+button_text = "Store"
+
 [node name="Settings" parent="BaseButtons/VBoxContainer" instance=ExtResource("6_kgy1f")]
 layout_mode = 2
 button_text = "Settings"
@@ -40,5 +44,6 @@ layout_mode = 2
 button_text = "Quit"
 
 [connection signal="pressed" from="BaseButtons/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="BaseButtons/VBoxContainer/Store" to="." method="_on_store_pressed"]
 [connection signal="pressed" from="BaseButtons/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="BaseButtons/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
