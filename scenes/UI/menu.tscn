@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dplbv72nrinx3"]
+[gd_scene load_steps=6 format=3 uid="uid://dplbv72nrinx3"]
 
 [ext_resource type="Script" path="res://scripts/UI/menu.gd" id="1_ha8t1"]
 [ext_resource type="PackedScene" uid="uid://ds4pfp6ipp408" path="res://scenes/birds/skins/Never/never.tscn" id="2_ctptk"]
 [ext_resource type="PackedScene" uid="uid://d1wo5w0rpw6ha" path="res://scenes/UI/settings_menu.tscn" id="3_vatfe"]
 [ext_resource type="PackedScene" uid="uid://c1aiqjg3ww8w6" path="res://scenes/UI/button.tscn" id="5_6o7xk"]
-[ext_resource type="AudioStream" uid="uid://ca8f7q4lnhgvo" path="res://assets/audio/background/background.mp3" id="5_i0dp5"]
 [ext_resource type="PackedScene" uid="uid://b4qwu7rbwdjxk" path="res://scenes/game_objects/background.tscn" id="6_okpdq"]
 
 [node name="Menu" type="Control"]
@@ -46,6 +45,10 @@ layout_mode = 2
 action_mode = 0
 button_text = "Play"
 
+[node name="Store" parent="BaseButtons/VBoxContainer" instance=ExtResource("5_6o7xk")]
+layout_mode = 2
+button_text = "Store"
+
 [node name="Settings" parent="BaseButtons/VBoxContainer" instance=ExtResource("5_6o7xk")]
 layout_mode = 2
 action_mode = 0
@@ -58,11 +61,8 @@ button_text = "Quit"
 
 [node name="Background" parent="." instance=ExtResource("6_okpdq")]
 
-[node name="Background_music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_i0dp5")
-bus = &"Music"
-
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="BaseButtons/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="BaseButtons/VBoxContainer/Store" to="." method="_on_store_pressed"]
 [connection signal="pressed" from="BaseButtons/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="BaseButtons/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

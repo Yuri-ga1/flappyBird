@@ -21,12 +21,7 @@ func _on_ready() -> void:
 	character = character_scene.instantiate()
 	add_child(character)
 	character.flying = true
-	
-	$Background_music.play()
-	$Background_music.finished.connect(func():
-		$Background_music.play()
-	)
-	
+
 
 func _process(delta: float) -> void:
 	if is_touch_max_height:
@@ -42,6 +37,7 @@ func _on_play_pressed() -> void:
 	if character and character.get_parent():
 		character.get_parent().remove_child(character)
 		GameManager.character = character
+	BackgroundMusic.stop_music()
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 
@@ -64,3 +60,7 @@ func on_settings_back() -> void:
 	if settings_menu:
 		settings_menu.visible = false
 	$BaseButtons.visible = true
+
+
+func _on_store_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/UI/store.tscn")

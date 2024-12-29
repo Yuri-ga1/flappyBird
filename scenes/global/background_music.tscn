@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://imgsb28f0y5v"]
+
+[ext_resource type="Script" path="res://scripts/global/background_music.gd" id="1_eatsx"]
+
+[node name="Background_music" type="AudioStreamPlayer"]
+bus = &"Music"
+script = ExtResource("1_eatsx")

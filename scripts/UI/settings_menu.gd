@@ -4,6 +4,8 @@ signal back_pressed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	BackgroundMusic.play_music()
+		
 	$Audio/VBoxContainer/Master.value = db_to_linear(AudioServer.get_bus_volume_db(0))
 	$Audio/VBoxContainer/Music.value = db_to_linear(AudioServer.get_bus_volume_db(1))
 	$Audio/VBoxContainer/SFX.value = db_to_linear(AudioServer.get_bus_volume_db(2))
