@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4qwu7rbwdjxk"]
+
+[ext_resource type="Script" path="res://scripts/objects/background.gd" id="1_ebt8f"]
+
+[node name="Background" type="Sprite2D"]
+z_index = -99
+offset = Vector2(432, 384)
+script = ExtResource("1_ebt8f")

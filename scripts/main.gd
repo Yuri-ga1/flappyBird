@@ -30,7 +30,7 @@ func _ready() -> void:
 	ground = $Camera/Ground
 	background = $Camera/Background
 	
-	background.texture = GameManager.background
+	background.offset.y = 300
 	
 	screen_size = get_window().size
 	ground_height = ground.get_node("Sprite2D").texture.get_height()

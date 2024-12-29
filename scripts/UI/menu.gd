@@ -16,7 +16,7 @@ var settings_menu: Control = null
 
 func _on_ready() -> void:
 	background = $Background
-	background.texture = GameManager.background
+	background.scale.y = 1.219
 	
 	character = character_scene.instantiate()
 	add_child(character)
