@@ -6,6 +6,8 @@
 [node name="Button" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 flat = true
 script = ExtResource("1_blphu")
 
@@ -14,7 +16,6 @@ layout_mode = 0
 offset_right = 120.0
 offset_bottom = 42.0
 texture = ExtResource("2_fdln7")
-expand_mode = 1
 
 [node name="Text" type="Label" parent="Texture"]
 layout_mode = 1

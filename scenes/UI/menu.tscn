@@ -20,6 +20,7 @@ settings_menu_scene = ExtResource("3_vatfe")
 
 [node name="BaseButtons" type="MarginContainer" parent="."]
 z_index = 99
+layout_direction = 3
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -34,8 +35,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BaseButtons"]
+layout_direction = 3
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_constants/separation = 5
+alignment = 1
 
 [node name="Play" parent="BaseButtons/VBoxContainer" instance=ExtResource("5_6o7xk")]
 layout_mode = 2
